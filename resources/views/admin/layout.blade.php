@@ -26,9 +26,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   {{-- <link rel="stylesheet" href="/adminlte/css/AdminLTE.min.css"> --}}
   <link rel="stylesheet" href="{{ asset('adminlte/css/AdminLTE.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('adminlte/css/skins/skin-blue.min.css') }}">
+  {{-- <link rel="stylesheet" href="{{ asset('adminlte/css/skins/skin-blue.min.css') }}"> --}}
+  <link rel="stylesheet" href="{{ asset('adminlte/css/skins/skin-green-light.css') }}">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green-light sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
