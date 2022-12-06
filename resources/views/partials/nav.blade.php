@@ -4,12 +4,6 @@
     </div>
     <ul class="container-flex list-unstyled">
         <li class="pure-menu-item">
-            <a href="{{ route('pages.home') }}"
-                class="pure-menu-link c-gris-2 text-uppercase {{ request()->routeIs('pages.home') ? 'hover' : '' }}">
-                Inicio
-            </a>
-        </li>
-        <li class="pure-menu-item">
             <a href="{{ route('pages.about') }}"
                 class="pure-menu-link c-gris-2 text-uppercase {{ request()->routeIs('pages.about') ? 'hover' : '' }}">
                 Nosotros
@@ -18,7 +12,7 @@
         <li class="pure-menu-item">
             <a href="{{ route('pages.archive') }}"
                 class="pure-menu-link c-gris-2 text-uppercase {{ request()->routeIs('pages.archive') ? 'hover' : '' }}">
-                Archivo
+                Estudios
             </a>
         </li>
         <li class="pure-menu-item">

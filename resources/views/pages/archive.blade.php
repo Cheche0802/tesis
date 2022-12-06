@@ -1,43 +1,39 @@
 @extends('layout')
 
 @section('content')
-<section class="pages container">
-    <div class="page page-archive">
-        <h1 class="text-capitalize">archive</h1>
-        <p>Nam efficitur, massa quis fringilla volutpat, ipsum massa consequat nisi, sed eleifend orci sem sodales lorem. Curabitur molestie eros urna, eleifend molestie risus placerat sed.</p>
-        <div class="divider-2" style="margin: 35px 0;"></div>
-        <div class="container-flex space-between">
-            <div class="authors-categories">
-                <h3 class="text-capitalize">authors</h3>
-                <ul class="list-unstyled">
-                    @foreach ($authors as $author)
-                        <li>{{ $author->name }}</li>
-                    @endforeach
-                </ul>
-                <h3 class="text-capitalize">categories</h3>
-                <ul class="list-unstyled">
-                    @foreach ($categories as $category)
-                        <li class="text-capitalize">
-                            <a href="{{ route('categories.show', $category) }}">{{ $category->name }}</a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            <div class="latest-posts">
-                <h3 class="text-capitalize">latest posts</h3>
-{{-- {{ dd($category) }} --}}
-                @foreach ($posts as $post)
-                    <p><a href="{{ route('posts.show', $post) }}">{{ $post->title }}</a></p>
-                @endforeach
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <div class="archive">
+        <section class="pages container">
+        <h1 class="text-center " style="margin-bottom: 2rem"> ESTUDIOS BÍBLICOS </h1>
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Romanos 8:28</h5>
+                    <hr>
+                    <p class="card-text">Todas las cosas ayudan a bien </p>
 
-                <h3 class="text-capitalize">posts by month</h3>
-                <ul class="list-unstyled">
-                    @foreach ($archive as $date)
-                        <li>{{ $date->month }} {{ $date->year }} ({{ $date->posts_count }})</li>
-                    @endforeach
-                </ul>
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Génesis 1:3-27</h5>
+                    <hr>
+                    <p class="card-text">Entonces Dios dijo: «Que haya luz»; y hubo luz. Y Dios vio que la luz era buena. Luego separó la luz de la oscuridad. Dios llamó a la luz «día» y a la oscuridad «noche». Y pasó la tarde y llegó la mañana, así se cumplió el primer día</p>
+
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Sic Mundus Creatus Est</h5>
+                    <hr>
+                    <p class="card-text">Y así se creó el mundo.</p>
+
+                </div>
             </div>
         </div>
+    </section>
     </div>
-</section>
 @endsection

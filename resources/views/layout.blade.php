@@ -26,7 +26,9 @@
   <header class="space-inter">
     <div class="container container-flex space-between">
       <div class="logo">
-        <img src="/img/logo CDG.png" alt="">
+        <a href="/">
+            <img src="/img/logo CDG.png"  alt="">
+        </a>
       </div>
       @include('partials.nav')
     </div>
@@ -39,7 +41,10 @@
     <footer>
     <div class="container contents">
         <div class="column">
-            <figure class="logo"><img src="/img/Logo CDG con nombre.png" alt=""></figure>
+            <figure class="logo">
+                  <a href="/">
+                <img src="/img/logo CDG.png"  alt="">
+            </a></figure>
         </div>
         <div class="column">
             <p class="info strong">Direccion</p>

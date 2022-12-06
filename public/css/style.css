@@ -297,3 +297,23 @@ p.info
 p.info.strong{
 font-weight: 700;
 }
+
+.archive{
+    padding: 3rem 0;
+    background-image: url('../img/fondo2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about{
+    padding: 3rem 0;
+    background-image: url('../img/fondo Nª1-01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.page.page-about{
+    background: transparent;
+    box-shadow: none;
+}
+
