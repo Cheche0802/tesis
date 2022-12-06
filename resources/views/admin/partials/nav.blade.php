@@ -8,7 +8,7 @@
   </li>
 
   <li class="treeview {{ request()->routeIs('admin.posts.index') ? 'hover' : '' }}">
-    <a href="#"><i class="fa fa-bars"></i> <span>Blog</span>
+    <a href="#"><i class="fa fa-bars"></i> <span>Publicaciones</span>
       <span class="pull-right-container">
         <i class="fa fa-angle-left pull-right"></i>
       </span>

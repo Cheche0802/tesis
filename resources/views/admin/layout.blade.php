@@ -40,7 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">{{ config('app.name') }}</span>
+      <span class="logo-lg">Comunidad de Gracia</span>
     </a>
 
     <!-- Header Navbar -->
@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
+{{--           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
@@ -146,7 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#">View all tasks</a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
             <!-- Menu Toggle Button -->
@@ -190,9 +190,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          <li>
+{{--           <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </nav>
