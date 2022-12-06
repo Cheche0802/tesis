@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $query = Post::published('DESC');
+        $query = Post::orderBy('id', 'DESC');
 
         if(request('month')) {
             $query->whereMonth(request('month'));
@@ -21,7 +21,7 @@ class PagesController extends Controller
             $query->whereYear(request('year'));
         }
 
-		$posts = $query->paginate();
+		$posts = $query->paginate(3);
 
     	return view('pages.home', compact('posts'));
     }
