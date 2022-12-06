@@ -37,11 +37,11 @@
 						<td>{{ $post->title }}</td>
 						<td>{{ $post->excerpt }}</td>
 						<td>
-							<a href="{{ route('posts.show', $post) }}"
+						{{-- 	<a href="{{ route('posts.show', $post) }}"
 								class="btn btn-xs btn-default"
 								target="_blank"
 							><i class="fa fa-eye"></i></a>
-
+ --}}
 							<a href="{{ route('posts.edit', $post) }}"
 								class="btn btn-xs btn-info"
 							><i class="fa fa-pencil"></i></a>

@@ -15,7 +15,7 @@ class AdminPostsController extends Controller
     {
         $posts = Post::allowed()->get();
 
-    	return view('posts.index', compact('posts'));
+    	return view('admin.posts.index', compact('posts'));
     }
 
     public function store(Request $request)
@@ -28,13 +28,7 @@ class AdminPostsController extends Controller
 
         return redirect()->route('posts.edit', $post);
     }
-    public function show(Post $post)
-    {
 
-            return view('posts.show', compact('post'));
-
-
-    }
     public function edit(Post $post)
     {
         $this->authorize('update', $post);
@@ -66,7 +60,7 @@ class AdminPostsController extends Controller
         $post->delete();
 
         return redirect()
-            ->route('admin.posts.index')
+            ->route('posts.index')
             ->with('flash', 'La publicación ha sido eliminada');
     }
 

@@ -15,6 +15,13 @@
 
         <div class="image-w-text">
             {!! $post->body !!}
+
+        </div>
+
+
+        <div class="image-w-text">
+            {!! $post->photos !!}
+
         </div>
 
         <footer class="container-flex space-between">
@@ -38,9 +45,9 @@
 
 @push('scripts')
 <script id="dsq-count-scr" src="//zendero.disqus.com/count.js" async></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+{{-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> --}}
 <script src="/js/twitter-bootstrap.js"></script>
 @endpush
 

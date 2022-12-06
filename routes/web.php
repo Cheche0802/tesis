@@ -31,7 +31,7 @@ Route::group([
 function(){
 	Route::get('/', [AdminController::class,'index'])->name('dashboard');
 
-	Route::resource('posts', 'App\Http\Controllers\Admin\AdminPostsController');
+	Route::resource('posts', 'App\Http\Controllers\Admin\AdminPostsController', ['except' => 'show']);
 	/* Route::resource('posts', AdminPostsController::class)->except('show'); */
     // Route::resource('users', 'UsersController', ['as' => 'admin']);
     Route::resource('users', UsersController::class, [

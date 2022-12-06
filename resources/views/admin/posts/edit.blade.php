@@ -69,8 +69,8 @@
                                     <i class="fa fa-calendar"></i>
                                 </div>
                                 <input name="published_at" class="form-control" {{-- value="{{ old('published_at', $post->published_at ? $post->published_at->format('dd/mm/Y') : null) }}" --}}
-                                    value="{{ old('published_at', $post->published_at ? $post->published_at->format('d/m/Y') : null) }}"
-                                    type="text" id="datepicker">
+                                    value="{{-- {{ old('published_at', $post->published_at ? $post->published_at->format('d/m/Y') : null) }} --}}
+                                    {{today() }}" type="text" id="datepicker" disabled>
                             </div>
                         </div>
                         <div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
@@ -148,6 +148,13 @@
         $("#datepicker").datepicker({
             dateFormat: 'dd/mm/yy'
         });
+        function today(){
+    var d = new Date();
+    var curr_date = d.getDate();
+    var curr_month = d.getMonth() + 1;
+    var curr_year = d.getFullYear();
+    document.write(curr_date + "-" + curr_month + "-" + curr_year);
+}
 
         CKEDITOR.replace('ckeditor');
         CKEDITOR.config.height = 315;
