@@ -17,11 +17,14 @@ header nav li a{
 }
 header nav li a:hover{
 	border-bottom: 2px solid #1abc9c;
-	padding-bottom: 5px;
+}
+
+header{
+    background-color: #ffffff;
 }
 
 .logo img{
-	width: 150px;
+	width: 6rem;
 }
 
 
@@ -124,18 +127,16 @@ cite .img-cite, .cite .img-cite{
 }
 
 .footer footer{
-	background: #1abc9c;
+	background: rgb(220,238,174);
 	padding: 45px;
 	text-align: center;
 	color: #ffffff;
-	
+
 }
 .footer footer .logo{
 	opacity: 0.4;
 }
-.footer footer p{
-	opacity: 0.4;
-}
+
 .footer footer nav ul{
 	margin-top: 45px;
 }
@@ -147,7 +148,7 @@ cite .img-cite, .cite .img-cite{
 	margin: 0 10px;
 }
 .footer footer nav ul li a{
-	color: white;
+	color: black;
 	text-decoration: none;
 }
 .footer footer .social-media-footer li a{
@@ -213,7 +214,7 @@ a.btn-bar{
 	border: 0;
 	background: #f7f9fc;
 	resize: vertical;
-	padding: 25px 0 0 15px; 
+	padding: 25px 0 0 15px;
 }
 .page-contact .form-contact .send-message a{
 	display: block;
@@ -237,15 +238,15 @@ a.btn-bar{
 	display: block;
 	text-align: center;
 }
-      
+
       .custom-wrapper.open {
           height: 9em;
       }
-      
+
       .custom-menu-3 {
           text-align: right;
       }
-      
+
       .custom-toggle {
           width: 34px;
           height: 34px;
@@ -255,7 +256,7 @@ a.btn-bar{
           right: 20px;
           display: none;
       }
-      
+
       .custom-toggle .bar {
           background-color: #1abc9c;
           display: block;
@@ -265,9 +266,34 @@ a.btn-bar{
           position: absolute;
           top: 18px;
           right: 7px;
-          
+
       }
-      
-      
 
 
+
+
+.image-home
+{
+    display: grid;
+    justify-items: center;
+    margin: 0%;
+    width:100%;
+    margin-bottom: 2rem;
+}
+
+div.container.contents{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
+}
+
+p.info
+{
+    color: Black;
+}
+p.info.strong{
+font-weight: 700;
+}

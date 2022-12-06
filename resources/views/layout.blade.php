@@ -25,9 +25,9 @@
   <div class="preload"></div>
   <header class="space-inter">
     <div class="container container-flex space-between">
-      <figure class="logo">
-        <img src="/img/logo.png" alt="">
-      </figure>
+      <div class="logo">
+        <img src="/img/logo CDG.png" alt="">
+      </div>
       @include('partials.nav')
     </div>
   </header>
@@ -37,17 +37,39 @@
 
   <section class="footer">
     <footer>
-    <div class="container">
-      <figure class="logo"><img src="/img/logo.png" alt=""></figure>
+    <div class="container contents">
+        <div class="column">
+            <figure class="logo"><img src="/img/Logo CDG con nombre.png" alt=""></figure>
+        </div>
+        <div class="column">
+            <p class="info strong">Direccion</p>
+            <p class="info">C. Boyaca, Los Teques 1201 Miranda </p>
+        </div>
+        <div class="column">
+            <p class="info strong">Telefono</p>
+            <p class="info">+58 412-5568963</p>
+            <p class="info">+58 416-7251012</p>
+        </div>
+        <div class="column">
+            <p class="info strong">Email</p>
+            <p class="info">principal@comunidaddegracia.com</p>
+            <p class="info">contacto@comunidaddegracia.com</p>
+        </div>
+    </div>
+
+
+
+
+
       <nav>
-        <ul class="container-flex space-center list-unstyled">
+        <ul class="container-flex space-center list-unstyled" style="color:black!important">
           <li><a href="#" class="c-gris-2 text-uppercase active">home</a></li>
           <li><a href="#" class="c-gris-2 text-uppercase">about</a></li>
           <li><a href="#" class="c-gris-2 text-uppercase">archive</a></li>
           <li><a href="#" class="c-gris-2 text-uppercase">contact</a></li>
         </ul>
       </nav>
-      <div class="divider-2"></div>
+{{--       <div class="divider-2"></div>
       <p>Nunc placerat dolor at lectus hendrerit dignissim. Ut tortor sem, consectetur nec hendrerit ut, ullamcorper ac odio. Donec viverra ligula at quam tincidunt imperdiet. Nulla mattis tincidunt auctor.</p>
       <div class="divider-2" style="width:80%;"></div>
       <p>© 2017 - Zendero. All Rights Reserved. Designed & Developed by <span class="c-white">Agencia De La Web</span></p>
@@ -57,7 +79,8 @@
         <li><a href="#" class="in"></a></li>
         <li><a href="#" class="pn"></a></li>
       </ul>
-    </div>
+          </div>
+--}}
 </footer>
   </section>
 

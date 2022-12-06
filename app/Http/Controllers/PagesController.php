@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $query = Post::published();
+        $query = Post::published('DESC');
 
         if(request('month')) {
             $query->whereMonth(request('month'));

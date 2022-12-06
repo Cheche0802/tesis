@@ -1,45 +1,52 @@
 @extends('layout')
 
 @section('content')
-<section class="posts container">
-@if (isset($title))
-    <h3>{{ $title }}</h3>
-@endif
-@forelse($posts as $post)
-    <article class="post">
+<section class="posts">
+    <div class="image-home" >
+        <img src="{{asset('/img/image-home.jpg') }}" alt="" srcset="">
+    </div>
 
-        @include( $post->viewType('home') )
+<div class="container">
+    @if (isset($title))
+        <h3>{{ $title }}</h3>
+    @endif
+    @forelse($posts as $post)
+        <article class="post">
 
-        <div class="content-post">
+            @include( $post->viewType('home') )
 
-            @include('posts.header')
 
-            <h1>{{ $post->title }}</h1>
+            <div class="content-post">
 
-            <div class="divider"></div>
+                @include('posts.header')
 
-            <p>{{ $post->excerpt }}</p>
+                <h1>{{ $post->title }}</h1>
 
-            <footer class="container-flex space-between">
+                <div class="divider"></div>
 
-                <div class="read-more">
-                    <a href="{{ route('posts.show', $post) }}" class="text-uppercase c-green">Leer más</a>
-                </div>
+                <p>{{ $post->excerpt }}</p>
 
-                @include('posts.tags')
+                <footer class="container-flex space-between">
 
-            </footer>
-        </div>
-    </article>
-@empty
-    <article class="post">
-        <div class="content-post">
+                    <div class="read-more">
+                        <a href="{{ route('posts.show', $post) }}" class="text-uppercase c-green">Leer más</a>
+                    </div>
 
-            <h1>No hay publicaciones todavía.</h1>
+                    @include('posts.tags')
 
-        </div>
-    </article>
-@endforelse
+                </footer>
+            </div>
+        </article>
+    @empty
+        <article class="post">
+            <div class="content-post">
+
+                <h1>No hay publicaciones todavía.</h1>
+
+            </div>
+        </article>
+    @endforelse
+</div>
 </section><!-- fin del section.posts -->
 
 {{ $posts->appends(request()->all())->links() }}

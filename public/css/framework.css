@@ -36,6 +36,7 @@
 .container-flex{
 	display: flex;
 	flex-wrap: wrap;
+    align-items: center;
 }
 .space-between{
 	justify-content: space-between;
@@ -121,7 +122,7 @@
 	display: block;
 }
 .space-inter{
-	padding: 35px 5px;
+	padding: 35px 0px 15px;
 }
 .margin-25{
 	margin:25px 0;
@@ -139,6 +140,5 @@
 }
 .hover{
 	border-bottom: 2px solid #1abc9c;
-	padding-bottom: 5px;
 }
 
