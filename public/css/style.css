@@ -234,6 +234,11 @@ a.btn-bar{
           -ms-transition: height 0.5s;
           transition: height 0.5s;
       }
+
+.carousel-inner .item img{
+    width: 100%;
+    height: 50%;
+}
 .custom-wrapper ul li a{
 	display: block;
 	text-align: center;

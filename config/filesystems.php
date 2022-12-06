@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'local'),
+    'default' => env('local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -32,17 +32,24 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
-            'throw' => false,
+            'root' => public_path('/img'),
+            'url' => env('APP_URL') . '/public/img',
+            'visibility' => 'public',
         ],
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'root' => storage_path('app/public/img'),
+            'url' => env('APP_URL').'/public/img',
             'visibility' => 'public',
-            'throw' => false,
         ],
+
+        // 'posts' => [
+        //     'driver' => 'local',
+        //     'root' => storage_path('app/public/img'),
+        //     'url' => env('APP_URL') . '/public/img',
+        //     'visibility' => 'public',
+        // ],
 
         's3' => [
             'driver' => 's3',

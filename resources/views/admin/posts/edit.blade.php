@@ -25,7 +25,7 @@
                                     <button class="btn btn-danger btn-xs" style="position: absolute">
                                         <i class="fa fa-remove"></i>
                                     </button>
-                                    <img class="img-responsive" src="{{ url($photo->url) }}">
+                                    <img class="img-responsive" src="{{ asset('/storage/img/'.$photo->url) }}">
                                 </div>
                             </form>
                         @endforeach
@@ -149,8 +149,9 @@
         $("#datepicker").datepicker({
             dateFormat: 'dd/mm/yy',
             minDate:0,
-            maxDate:"+M +15D"
+            maxDate:"+1M +15D"
         });
+
         function today(){
     var d = new Date();
     var curr_date = d.getDate();
@@ -194,60 +195,75 @@
 
         // });
 
-        let myDropzone = new Dropzone('#myDropzone', {
-            autoProcessQueue: false,
-            maxFilesize: 10,
-            parallelUploads: 20,
-            maxFile: 10,
-            url: '/posts/{{$post->url}}/photos',
-            dictDefaultMessage: 'Subir la imagen...',
-            // dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
-            acceptedFiles: ".png,.jpg,.jpeg,.gif,.bmp",
-            // acceptedFiles: 'image/*',
-            addRemoveLinks: true,
-            dictRemoveFile: 'Borrar Archivo',
+        // let myDropzone = new Dropzone('#myDropzone', {
+        //     autoProcessQueue: false,
+        //     maxFilesize: 10,
+        //     parallelUploads: 20,
+        //     maxFile: 10,
+        //     url: 'admin/posts/{{$post->title}}/photos',
+        //     dictDefaultMessage: 'Subir la imagen...',
+        //     // dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
+        //     acceptedFiles: ".png,.jpg,.jpeg,.gif,.bmp",
+        //     // acceptedFiles: 'image/*',
+        //     addRemoveLinks: true,
+        //     dictRemoveFile: 'Borrar Archivo',
+        //     paramName: 'photo',
+        //     headers: {
+        //         'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //     },
+        //     init: function() {
+        //         this.on("queuecomplete", function() {
+        //             this.options.autoProcessQueue = false;
+        //         });
+
+        //         this.on("processing", function() {
+        //             this.options.autoProcessQueue = true;
+        //         });
+
+        //         this.on("addedfile", function(file) {
+        //             file.previewElement.classList.add('dz-complete');
+        //         });
+
+        //         // $("#guardar").click(function(e) {
+        //         //     e.preventDefault();
+        //         //     dropzoneDevJobs.processQueue();
+        //         //     Swal.fire({
+        //         //         icon: 'success',
+        //         //         title: 'Se han guardado con exito',
+        //         //         timer: 2000
+        //         //     }).then(function() {
+        //         //         location.href = 'img/post/';
+        //         //     });
+        //         // });
+        //     },
+
+        //     success: function(file, response) {
+        //         console.log({
+        //             file,
+        //             response
+        //         });
+        //     }
+        // });
+
+        let myDropzone = new Dropzone('.dropzone', {
+            url: '/admin/posts/{{$post->url}}/photos',
+            method: "post",
+            acceptedFiles:'image/*',
+            maxFilesize: 2,
             paramName: 'photo',
+            addRemoveLinks: true,
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
             },
-            init: function() {
-                this.on("queuecomplete", function() {
-                    this.options.autoProcessQueue = false;
-                });
-
-                this.on("processing", function() {
-                    this.options.autoProcessQueue = true;
-                });
-
-                this.on("addedfile", function(file) {
-                    file.previewElement.classList.add('dz-complete');
-                });
-
-                // $("#guardar").click(function(e) {
-                //     e.preventDefault();
-                //     dropzoneDevJobs.processQueue();
-                //     Swal.fire({
-                //         icon: 'success',
-                //         title: 'Se han guardado con exito',
-                //         timer: 2000
-                //     }).then(function() {
-                //         location.href = 'img/post/';
-                //     });
-                // });
-            },
-
-            success: function(file, response) {
-                console.log({
-                    file,
-                    response
-                });
-            }
+            dictDefaultMessage: 'Arrastra las fotos aqui para subirlas...',
         });
 
-        // dropzone.on('error', function(file, res) {
-        //     var msg = res.photo[0];
-        //     $('.dz-error-message:last > span').text(msg);
-        // });
+        myDropzone.on('errors', function(file, res) {
+            // console.log(res.errors.photo[0]);
+            var msg = res.errors.photo[0];
+            $('.dz-error-message:last > span').text(msg);
+            // $('.dz-error-message:last > span').text(msg);
+        });
 
         Dropzone.autoDiscover = false;
     </script>

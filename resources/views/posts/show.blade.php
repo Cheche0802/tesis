@@ -18,12 +18,6 @@
 
         </div>
 
-
-        <div class="image-w-text">
-            {!! $post->photos !!}
-
-        </div>
-
         <footer class="container-flex space-between">
             @include('partials.social-links', ['description' => $post->title])
 
@@ -39,15 +33,15 @@
 </article>
 @endsection
 
-@push('styles')
-    <link rel="stylesheet" type="text/css" href="/css/twitter-bootstrap.css">
-@endpush
+@section('styles')
+    <link rel="stylesheet" type="text/css" href="{{ asset('/adminlte/carouselBootstrap/css/bootstrap.css') }}">
+@endsection
 
-@push('scripts')
+@section('scripts')
 <script id="dsq-count-scr" src="//zendero.disqus.com/count.js" async></script>
-{{-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script> --}}
-<script src="/js/twitter-bootstrap.js"></script>
-@endpush
+  crossorigin="anonymous"></script>
+<script src="{{ asset('/adminlte/carouselBootstrap/js/bootstrap.js') }}"></script>
+@endsection
 

@@ -48,6 +48,8 @@ class AdminPostsController extends Controller
 
         $post->syncTags($request->get('tags'));
 
+        // $post->syncP
+
         return redirect()
             ->route('posts.edit', $post)
             ->with('flash', 'La publicación ha sido guardada');

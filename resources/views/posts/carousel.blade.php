@@ -2,8 +2,8 @@
     <!-- Indicators -->
     <ol class="carousel-indicators">
         @foreach ($post->photos as $photo)
-            <li data-target="#carousel-example-generic" 
-                data-slide-to="{{ $loop->index }}" 
+            <li data-target="#carousel-example-generic"
+                data-slide-to="{{ $loop->index }}"
                 class="{{ $loop->first ? 'active' : ''}}">
             </li>
         @endforeach
@@ -13,7 +13,7 @@
     <div class="carousel-inner" role="listbox">
         @foreach ($post->photos as $photo)
             <div class="item {{ $loop->first ? 'active' : ''}}">
-                <img src="{{ url($photo->url) }}">
+                <img src="{{ asset('/storage/img/'.$photo->url) }}">
             </div>
         @endforeach
     </div>
