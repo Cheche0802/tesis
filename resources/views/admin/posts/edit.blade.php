@@ -223,17 +223,17 @@
                     file.previewElement.classList.add('dz-complete');
                 });
 
-                $("#guardar").click(function(e) {
-                    e.preventDefault();
-                    dropzoneDevJobs.processQueue();
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Se han guardado con exito',
-                        timer: 2000
-                    }).then(function() {
-                        location.href = 'img/post/';
-                    });
-                });
+                // $("#guardar").click(function(e) {
+                //     e.preventDefault();
+                //     dropzoneDevJobs.processQueue();
+                //     Swal.fire({
+                //         icon: 'success',
+                //         title: 'Se han guardado con exito',
+                //         timer: 2000
+                //     }).then(function() {
+                //         location.href = 'img/post/';
+                //     });
+                // });
             },
 
             success: function(file, response) {
