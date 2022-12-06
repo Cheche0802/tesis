@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PublishedController;
 
 use App\Http\Controllers\TagsController;
 //use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -19,7 +20,7 @@ Route::get('nosotros', [PagesController::class, 'about'])->name('pages.about');
 Route::get('archivo', [PagesController::class,'archive'])->name('pages.archive');
 Route::get('contacto', [PagesController::class,'contact'])->name('pages.contact');
 
-Route::get('blog/{post}', [PostsController::class,'show'])->name('posts.show');
+Route::get('blog/{post}', [PublishedController::class,'show'])->name('posts.show');
 Route::get('categorias/{category}', [CategoriesController::class,'show'])->name('categories.show');
 Route::get('tags/{tag}', [TagsController::class, 'show'])->name('tags.show');
 
