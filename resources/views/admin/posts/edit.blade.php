@@ -68,9 +68,10 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input name="published_at" class="form-control" {{-- value="{{ old('published_at', $post->published_at ? $post->published_at->format('dd/mm/Y') : null) }}" --}}
-                                    value="{{-- {{ old('published_at', $post->published_at ? $post->published_at->format('d/m/Y') : null) }} --}}
-                                    {{today() }}" type="text" id="datepicker" disabled>
+                                <input name="published_at" class="form-control"
+                                    {{-- value="{{ old('published_at', $post->published_at ? $post->published_at->format('dd/mm/Y') : null) }}" --}}
+                                    value="{{ old('published_at', $post->published_at ? $post->published_at->format('d/m/Y') : null) }}" type="text"
+                                    id="datepicker">
                             </div>
                         </div>
                         <div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }}">
@@ -146,7 +147,9 @@
         });
 
         $("#datepicker").datepicker({
-            dateFormat: 'dd/mm/yy'
+            dateFormat: 'dd/mm/yy',
+            minDate:0,
+            maxDate:"+M +15D"
         });
         function today(){
     var d = new Date();
@@ -196,7 +199,7 @@
             maxFilesize: 10,
             parallelUploads: 20,
             maxFile: 10,
-            url: '/admin/posts/{{ $post->url }}/photos',
+            url: '/posts/{{$post->url}}/photos',
             dictDefaultMessage: 'Subir la imagen...',
             // dictDefaultMessage: 'Arrastra las fotos aquí para subirlas'
             acceptedFiles: ".png,.jpg,.jpeg,.gif,.bmp",
@@ -220,17 +223,17 @@
                     file.previewElement.classList.add('dz-complete');
                 });
 
-                // $("#guardar").click(function(e) {
-                //     e.preventDefault();
-                //     dropzoneDevJobs.processQueue();
-                //     Swal.fire({
-                //         icon: 'success',
-                //         title: 'Se han guardado con exito',
-                //         timer: 2000
-                //     }).then(function() {
-                //         location.href = `{{ asset('img/post/') }}`;
-                //     });
-                // });
+                $("#guardar").click(function(e) {
+                    e.preventDefault();
+                    dropzoneDevJobs.processQueue();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Se han guardado con exito',
+                        timer: 2000
+                    }).then(function() {
+                        location.href = 'img/post/';
+                    });
+                });
             },
 
             success: function(file, response) {
