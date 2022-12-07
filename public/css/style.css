@@ -239,9 +239,31 @@ a.btn-bar{
     width: 100%;
     height: 50%;
 }
+
+#footerL {
+    /* background-image: url("{{ asset('img/formato Nº3.2.3-02.jpg')}}"); */
+    background-image: url('../img/formato Nº3.2.3-02.jpg');
+    background-repeat: no-repeat;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 0 auto;
+    background-size: cover;
+}
+
+#adminLogin {
+    background-image: url('../img/fondo N°5-01');
+}
+
 .custom-wrapper ul li a{
 	display: block;
 	text-align: center;
+    background-repeat: no-repeat;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    /* height: 0 auto; */
+    background-size: cover;
 }
 
       .custom-wrapper.open {

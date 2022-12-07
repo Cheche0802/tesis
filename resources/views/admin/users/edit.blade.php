@@ -50,7 +50,7 @@
 
                         @include('admin.roles.checkboxes')
 
-                        <button class="btn btn-primary btn-block">Actualizar roles</button>
+                    {{--     <button class="btn btn-primary btn-block">Actualizar roles</button> --}}
                     </form>
                     @else
                         <ul class="list-group">
@@ -74,7 +74,7 @@
 
                         @include('admin.permissions.checkboxes', ['model' => $user])
 
-                        <button class="btn btn-primary btn-block">Actualizar permisos</button>
+                        {{-- <button class="btn btn-primary btn-block">Actualizar permisos</button> --}}
                     </form>
                     @else
                         <ul class="list-group">
