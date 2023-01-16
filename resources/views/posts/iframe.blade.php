@@ -1,3 +1,3 @@
-<div class="video">
+<div class="video embed-responsive">
     {!! $post->iframe !!}
 </div>
